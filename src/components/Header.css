@@ -1,0 +1,18 @@
+.header {
+    margin-top: 2rem;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--orange);
+    font-weight: 500;
+}
+
+.navbar a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--orange);
+}
