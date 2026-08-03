@@ -1,0 +1,56 @@
+.profile {
+    aspect-ratio: 1/1;
+    background-image: url(../../public/profile.png);
+    min-height:450px;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: 40%;
+}
+
+.point {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: flex-start;
+    gap: 2rem;
+    color: var(--orange);
+    margin-top: 2rem;
+}
+
+.point-number {
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+
+.point-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.point-heading {
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin:0;
+}
+
+.point-paragraph {
+    font-size: 1rem;
+    margin:0;
+}
+
+.point-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.point-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--orange);
+}
+
+.point p {
+    color: var(--orange);
+}

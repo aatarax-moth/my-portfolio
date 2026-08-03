@@ -1,0 +1,12 @@
+.footer {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.footer * {
+    color: var(--orange);
+}
+
+.footer p {
+    font-weight: 600;
+}

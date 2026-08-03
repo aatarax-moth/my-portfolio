@@ -1,7 +1,7 @@
 import "./Hero.css";
 import Container from "./Container.js";
 import "../index.css";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function Hero() {
   return (
@@ -52,7 +52,7 @@ function Hero() {
             cycles helps me create products that are structured, intuitive, and
             complete.
           </p>
-          <div className="flex-row space-between">
+          <div className="flex-row space-between margin-top-1">
             <div className="social-links">
               <a
                 href="https://www.linkedin.com/in/kineshakay/"
@@ -61,14 +61,6 @@ function Hero() {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={18} />
-              </a>
-              <a
-                href="https://www.instagram.com/kiiy_lab/"
-                className="social-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram size={18} />
               </a>
               <a
                 href="https://github.com/aatarax-moth"
