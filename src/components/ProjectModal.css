@@ -1,0 +1,61 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: var(--orange);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.modal-heading-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.modal-heading {
+    margin-bottom: 0.5rem;
+}
+
+.modal-paragraph {
+    margin-bottom: 1rem;
+}
+
+.modal-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pill-tag {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--black);
+    font-size: 0.85rem;
+}
+
+.modal-close {
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--black);
+    color: var(--orange);
+}

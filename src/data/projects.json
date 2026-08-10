@@ -1,0 +1,88 @@
+[
+    {
+        "id": 1,
+        "spotlight": false,
+        "title": "CiiLOCK Engineering",
+        "thumbnail": "/projects/ciilock.png",
+        "description": "A custom-built static website crafted with pure HTML, CSS, and JavaScript, featuring a tactile, hardware-inspired UI to showcase multi-brand, multi-product lineups.",
+        "link": "https://ciilock.com/",
+        "software": ["Figma", "VS Code"],
+        "topics": ["Mechanical Engineering", "Multi-Brand"],
+        "languages": ["CSS", "JavaScript"]
+    },
+    {
+        "id": 2,
+        "spotlight": false,
+        "title": "SiiGMATIC Laboratories",
+        "thumbnail": "/projects/siigmatic.png",
+        "description": "A minimal, article-first showcase pairing raw lab-testing data with individual brand stories.",
+        "link": "https://siigmatic.com.au/",
+        "software": ["Figma", "VS Code"],
+        "topics": ["Lab Focused", "Multi-Brand", "Article Layout"],
+        "languages": ["CSS", "JavaScript"]
+    },
+    {
+        "id": 3,
+        "spotlight": false,
+        "title": "Durabal Design Studio",
+        "thumbnail": "/projects/durabal.png",
+        "description": "A minimalist, architecturally structured website celebrating interior design hardware—blending high-end brand storytelling with raw, lab-tested performance data.",
+        "link": "https://durabal.com/",
+        "software": ["Figma", "VS Code"],
+        "topics": [
+            "Architectural Editorial Layout",
+            "Multi-Brand Material Showcase",
+            "Lab-Tested Specs & Metrics",
+            "Minimalist Hardware UI"
+          ],
+        "languages": ["CSS", "JavaScript"]
+    },
+    {
+        "id": 4,
+        "spotlight": false,
+        "title": "VOLTA Doors",
+        "thumbnail": "/projects/volta.png",
+        "description": "A hyper-sleek, product-focused showcase featuring high-precision component UI, interactive spec overlays, and a futuristic dark-mode aesthetic.",
+        "link": "https://voltadoors.com/",
+        "software": ["Figma", "VS Code"],
+        "topics": [
+            "Futuristic Component UI",
+            "Deep-Dive Product Specs",
+            "Sleek High-Contrast Layout",
+            "Modular Hardware Showcase"
+          ],
+        "languages": ["CSS", "JavaScript"]
+    },
+    {
+        "id": 5,
+        "spotlight": false,
+        "title": "TITAN Doorware",
+        "thumbnail": "/projects/titan.png",
+        "description": "Architectural precision meets algorithmic design: a sleek product platform featuring a dynamic system configurator that calculates exact material specifications and bill-of-materials in real time.",
+        "link": "https://titandoorware.com/",
+        "software": ["Figma", "VS Code"],
+        "topics": [
+            "Architectural System Grid",
+            "Dynamic Product Configurator",
+            "Precision Spec Calculation",
+            "Sleek Spatial UI"
+          ],
+        "languages": ["CSS", "JavaScript"]
+    },
+    {
+        "id": 6,
+        "spotlight": false,
+        "title": "Mother Of All Rollers",
+        "thumbnail": "/projects/mor.png",
+        "description": "A sleek, product-focused website built around a glassmorphic aesthetic, featuring an interactive Fabric.js canvas configurator for real-time polygon manipulation.",
+        "link": "https://motherofallrollers.com/",
+        "software": ["Figma", "VS Code"],
+        "topics": [
+            "Glassmorphic Product Platform",
+            "Fabric.js Canvas Configurator",
+            "Real-Time Polygon Morphing",
+            "Interactive Vector Animations"
+          ],
+        "languages": ["CSS", "JavaScript", "Fabric,js", "Canvas API"]
+    }
+]

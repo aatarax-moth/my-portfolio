@@ -1,0 +1,11 @@
+h1 {
+    color: var(--orange);
+    margin: 0;
+}
+
+.project-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
