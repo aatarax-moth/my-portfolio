@@ -7,7 +7,7 @@ function Hero() {
   return (
     <Container>
       <div className="big-brand flex-row gap-4">
-        <div className="vert-center flex-row">
+        <div className="vert-center flex-row brand">
           <div className="box"></div>
           <h1 className="big-heading">
             K2Y <br></br>LAB
@@ -71,7 +71,7 @@ function Hero() {
                 <FaGithub size={18} />
               </a>
             </div>
-            <a className="button" href="#contact">
+            <a className="button" href="#projects">
               Scroll To Projects
             </a>
           </div>

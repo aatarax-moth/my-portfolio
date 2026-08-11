@@ -61,3 +61,21 @@
     background: none;
     text-decoration: none;
 }
+
+@media (max-width: 1160px) {
+    .big-brand {
+        height: auto;
+    }
+}
+
+@media (max-width: 1060px) {
+    .big-brand.flex-row {
+        flex-direction: column;
+    }
+    .box {
+        display:none;
+    }
+    .profile {
+        order: -1;
+    }
+}

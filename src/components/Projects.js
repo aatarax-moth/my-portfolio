@@ -4,6 +4,7 @@ import Container from "./Container";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import projectsData from "../data/projects.json";
+import { Link } from "react-router-dom";
 import "../index.css";
 
 function Projects() {
@@ -14,12 +15,12 @@ function Projects() {
 
     return (
         <Container>
-            <div className="projects">
+            <div className="projects" id="projects">
                 <div className="margin-top-4 flex-row space-between">
                     <h1>Projects</h1>
-                    <a className="button" href="">
+                    <Link className="button" to="/projects">
                         All Projects
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="project-showcase">

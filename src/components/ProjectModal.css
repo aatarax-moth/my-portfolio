@@ -9,7 +9,8 @@
 }
 
 .modal-box {
-    background-color: var(--orange);
+    background-color: var(--black);
+    color: var(--bg-color);
     border-radius: 16px;
     padding: 2rem;
     max-width: 600px;
@@ -29,12 +30,17 @@
     color: inherit;
 }
 
+.modal-heading-link:hover {
+    text-decoration: underline;
+}
+
 .modal-heading {
     margin-bottom: 0.5rem;
 }
 
 .modal-paragraph {
     margin-bottom: 1rem;
+    color: var(--bg-color);
 }
 
 .modal-pills {
@@ -47,7 +53,8 @@
 .pill-tag {
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--bg-color);
+    color: var(--bg-color);
     font-size: 0.85rem;
 }
 
@@ -56,6 +63,7 @@
     border-radius: 999px;
     border: none;
     cursor: pointer;
-    background-color: var(--black);
-    color: var(--orange);
+    font-weight: bold;
+    background-color: var(--bg-color);
+    color: var(--black);
 }

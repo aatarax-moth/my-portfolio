@@ -5,7 +5,7 @@ import Container from "./Container";
 function Description() {
   return (
     <Container>
-      <div className="margin-top-6 flex-row gap-8">
+      <div className="margin-top-6 flex-row description gap-4">
         <div className="flex-column">
           <p>
             My work sits between user-facing design and core technical

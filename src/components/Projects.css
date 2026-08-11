@@ -9,3 +9,9 @@ h1 {
     gap: 1.5rem;
     margin-top: 2rem;
 }
+
+@media (max-width: 900px) {
+    .project-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

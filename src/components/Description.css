@@ -5,6 +5,9 @@
     background-size: cover;
     background-repeat:no-repeat;
     background-position: 40%;
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
+                0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .point {
@@ -54,3 +57,9 @@
 .point p {
     color: var(--orange);
 }
+
+@media (max-width: 1160px) {
+    .description.flex-row {
+      flex-flow: column;
+    }
+  }

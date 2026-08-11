@@ -4,3 +4,9 @@
     padding: 0 4rem;
     box-sizing: border-box;
 }
+
+@media (max-width: 900px) {
+    .container {
+        padding: 0 2rem;
+    }
+}

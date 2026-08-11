@@ -7,11 +7,11 @@ function Header() {
         <div className="header">
             <Container>
                 <div className="navbar">
-                    <a className="nav-button" href="">Time</a>
+                    <a className="nav-button" href="/public/resume.pdf" type="download" download>Resume</a>
                     <a className="logo" href="">
                         <img src="/logo.svg" alt="Logo"/>
                     </a>
-                    <a className="nav-button" href="">Contact</a>
+                    <a className="nav-button" href="#contact">Contact</a>
                 </div>
             </Container>
         </div>

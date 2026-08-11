@@ -1,0 +1,68 @@
+[
+  {
+    "status": "Full-Time",
+    "company": "CiiLOCK Engineering",
+    "role": "Digital Product Developer",
+    "shortSummary": "Leading end-to-end design, development, and maintenance of multiple web apps.",
+    "summary": "Leading end-to-end design, development, and ongoing maintenance of multiple web apps — developing new features, troubleshooting and fixing bugs, and managing APIs, code repositories, Cloudflare, SEO, and Google Analytics. Also created automation and web scraping scripts, conducted code logic reviews, troubleshot CRM systems, and designed both 3D models and physical brand assets. Based in Melbourne, VIC.",
+    "skills": [
+      "Web Development",
+      "API Management",
+      "Cloudflare",
+      "SEO",
+      "Google Analytics",
+      "Web Scraping",
+      "Product Development",
+      "Project Management",
+      "Version Control",
+      "3D Modelling"
+    ],
+    "timeline": "2 yrs 8 mos",
+    "timeframe": "Jan 2024 - Present",
+    "currentlyActive": true
+  },
+  {
+    "status": "Self-Employed",
+    "company": "Vikyne Labs",
+    "role": "Full Stack Developer",
+    "shortSummary": "End-to-end full-stack solutions across diverse sectors, from prototype to deployment.",
+    "summary": "Building end-to-end full-stack solutions across diverse sectors, taking projects from initial prototype through to full deployment.",
+    "skills": [
+      "Full-Stack Development",
+      "Web Development",
+      "Prototyping"
+    ],
+    "timeline": "4 yrs 1 mo",
+    "timeframe": "Aug 2022 - Present",
+    "currentlyActive": true
+  },
+  {
+    "status": "Full-Time",
+    "company": "Forethought Marketing",
+    "role": "Creative Designer",
+    "shortSummary": "Creative Strategy, UI/UX, CX & XD.",
+    "summary": "Worked across Creative Strategy, UI/UX, CX (Customer Experience), and XD (Experience Design) for the Melbourne-based studio.",
+    "skills": [
+      "Creative Strategy",
+      "UI/UX Design",
+      "Customer Experience",
+      "Experience Design"
+    ],
+    "timeline": "6 mos",
+    "timeframe": "Aug 2023 - Jan 2024"
+  },
+  {
+    "status": "Internship",
+    "company": "Nüdel Kart",
+    "role": "Technical Designer",
+    "shortSummary": "Motion Study, Render, CAD Modelling.",
+    "summary": "Worked on motion studies, rendering, and CAD modelling for the Melbourne-based team.",
+    "skills": [
+      "Motion Study",
+      "Rendering",
+      "CAD Modelling"
+    ],
+    "timeline": "4 mos",
+    "timeframe": "Jul 2022 - Oct 2022"
+  }
+]

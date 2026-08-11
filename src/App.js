@@ -1,21 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header.js';
-import Hero from './components/Hero.js';
-import Description from './components/Description.js';
-import Projects from './components/Projects.js';
-import Footer from './components/Footer.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home"
+import AllProjectsPage from "./components/AllProjectsPage";
 
 function App() {
-  return (
-    <>
-    <Header />
-    <Hero />
-    <Description />
-    <Projects />
-    <Footer />
-    </>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<AllProjectsPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
