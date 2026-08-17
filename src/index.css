@@ -167,4 +167,7 @@ p {
   .point {
         grid-template-columns: 1fr;
     }
+    .gap-4 {
+      gap: 2rem;
+    }
 }
