@@ -92,3 +92,9 @@
       flex-flow: column;
     }
   }
+
+@media (max-width: 900px) {
+    .point {
+        grid-template-columns: 1fr;
+    }
+}

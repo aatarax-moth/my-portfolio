@@ -162,3 +162,9 @@ p {
 .margin-top-8 {
   margin-top: 8rem;
 }
+
+@media (max-width: 767px) {
+  .point {
+        grid-template-columns: 1fr;
+    }
+}

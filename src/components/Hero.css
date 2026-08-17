@@ -101,3 +101,12 @@
         order: -1;
     }
 }
+
+@media (max-width: 767px) {
+    .big-brand {
+        margin-top: 4rem;
+    }
+    .big-heading {
+        font-size: 8.5rem;
+    }
+}

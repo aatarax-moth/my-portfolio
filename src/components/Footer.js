@@ -8,8 +8,6 @@ function Footer() {
     <Container>
       <div
         className="footer flex-row space-between vert-end"
-        data-reveal
-        style={{ "--reveal-delay": "80ms" }}
       >
         <p>K2Y LAB © {new Date().getFullYear()}</p>
         <Link className="logo" to="/" aria-label="Go to home">
