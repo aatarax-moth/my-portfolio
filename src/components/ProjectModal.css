@@ -44,15 +44,15 @@
     color: inherit;
 }
 
-.modal-heading-link:hover {
-    text-decoration: underline;
-}
-
 .modal-heading {
     margin-bottom: 0.5rem;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+}
+
+.modal-heading:hover {
+    text-decoration: underline;
 }
 
 .modal-heading-arrow {
