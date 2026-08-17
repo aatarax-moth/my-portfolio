@@ -1,6 +1,12 @@
 .contact-form-card {
     margin: 4rem 0 0 0;
     border-radius: 12px;
+    transition: transform var(--motion-medium) var(--motion-ease-out),
+      box-shadow var(--motion-slow) var(--motion-ease-out);
+  }
+
+  .contact-form-card:focus-within {
+    transform: translateY(-1px);
   }
   
   .contact-form-header {
@@ -138,6 +144,7 @@
   .form-feedback {
     text-align: center;
     padding: 1.5rem 1rem;
+    animation: popIn var(--motion-medium) var(--motion-ease-out) both;
   }
   
   .form-feedback h3 {
@@ -165,6 +172,17 @@
   
   .btn-secondary:hover {
     background-color: var(--orange-light);
+  }
+
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Responsive */

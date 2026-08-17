@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ContactForm.css";
 import "../index.css";
 import Container from "./Container";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -11,6 +12,13 @@ function ContactForm() {
     });
 
     const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey =
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY ||
+        process.env.REACT_APP_EMAILJS_USER_ID;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,21 +31,48 @@ function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("submitting");
+        setErrorMessage("");
 
         try {
-            // Replace with your actual backend endpoint / EmailJS / Formspree logic
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            if (!serviceId || !templateId || !publicKey) {
+                throw new Error(
+                    "EmailJS is not configured. In Create React App, env vars must start with REACT_APP_ (e.g. REACT_APP_EMAILJS_SERVICE_ID)."
+                );
+            }
+
+            const templateParams = {
+                from_name: formData.name,
+                reply_to: formData.email,
+                message: formData.message,
+                name: formData.name,
+                email: formData.email,
+            };
+
+            await emailjs.send(serviceId, templateId, templateParams, {
+                publicKey,
+            });
 
             setStatus("success");
             setFormData({ name: "", email: "", message: "" });
         } catch (error) {
             setStatus("error");
+            const message =
+                (typeof error === "object" && error && "text" in error && error.text) ||
+                (error instanceof Error ? error.message : "") ||
+                "Something went wrong. Please try again.";
+
+            setErrorMessage(String(message));
         }
     };
 
     return (
         <Container>
-            <div className="contact-form-card">
+            <div
+                className="contact-form-card"
+                id="contact"
+                data-reveal
+                style={{ "--reveal-delay": "160ms" }}
+            >
                 <div className="contact-form-header">
                     <h2>Contact Me</h2>
                     <p>Have a question or want to work together? Send a message!</p>
@@ -100,7 +135,7 @@ function ContactForm() {
 
                         {status === "error" && (
                             <p className="form-error">
-                                Something went wrong. Please try again.
+                                {errorMessage || "Something went wrong. Please try again."}
                             </p>
                         )}
 

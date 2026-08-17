@@ -10,6 +10,13 @@
     text-decoration: none;
     display: inline-block;
     border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: var(--orange-hover);
+    box-shadow: 0 10px 26px rgba(254, 119, 67, 0.18);
+    transform: translateY(-1px);
 }
 
 .all-projects-grid {

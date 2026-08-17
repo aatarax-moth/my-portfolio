@@ -2,6 +2,13 @@
   --bg-color: #fbfbfb;
   --orange: #FE7743;
   --black: #1A1C23;
+  --orange-hover: #ea580c;
+  --orange-light: rgba(254, 119, 67, 0.22);
+
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 140ms;
+  --motion-medium: 220ms;
+  --motion-slow: 420ms;
 }
 
 body {
@@ -17,6 +24,70 @@ body {
   background-size: 600px 600px;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* Accessible focus styles */
+:where(a, button, [role="button"], input, textarea, select):focus-visible {
+  outline: 3px solid var(--orange-light);
+  outline-offset: 3px;
+}
+
+/* Consistent interactive motion */
+:where(a, button, [role="button"]) {
+  transition: transform var(--motion-fast) var(--motion-ease-out),
+    box-shadow var(--motion-medium) var(--motion-ease-out),
+    background-color var(--motion-medium) var(--motion-ease-out),
+    border-color var(--motion-medium) var(--motion-ease-out),
+    color var(--motion-medium) var(--motion-ease-out);
+}
+
+:where(a, button, [role="button"]):active {
+  transform: translateY(0.5px);
+}
+
+.button:hover {
+  background-color: var(--orange-hover);
+  box-shadow: 0 10px 30px rgba(254, 119, 67, 0.2);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Scroll reveal */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 12px));
+  transition: opacity var(--motion-slow) var(--motion-ease-out),
+    transform var(--motion-slow) var(--motion-ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js [data-reveal].reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 code {

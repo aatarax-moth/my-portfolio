@@ -8,6 +8,14 @@
     border-radius: 1rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
                 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform var(--motion-medium) var(--motion-ease-out),
+                box-shadow var(--motion-slow) var(--motion-ease-out);
+}
+
+.profile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06),
+                0 18px 44px rgba(0, 0, 0, 0.12);
 }
 
 .point {
@@ -17,6 +25,15 @@
     gap: 2rem;
     color: var(--orange);
     margin-top: 2rem;
+    padding: 1rem 1rem;
+    border-radius: 14px;
+    transition: transform var(--motion-medium) var(--motion-ease-out),
+                background-color var(--motion-medium) var(--motion-ease-out);
+}
+
+.point:hover {
+    transform: translateY(-2px);
+    background-color: rgba(254, 119, 67, 0.06);
 }
 
 .point-number {
@@ -46,6 +63,18 @@
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
+}
+
+.point-icons svg {
+    opacity: 0.9;
+    transform: translateY(0);
+    transition: transform var(--motion-medium) var(--motion-ease-out),
+                opacity var(--motion-medium) var(--motion-ease-out);
+}
+
+.point:hover .point-icons svg {
+    opacity: 1;
+    transform: translateY(-1px);
 }
 
 .point-icon {

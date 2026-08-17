@@ -5,10 +5,18 @@
     margin-top:2rem;
   }
   
-  .experience-card {
+.experience-card {
     border-radius: 1rem;
     padding: 1rem;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color var(--motion-medium) var(--motion-ease-out),
+      border-color var(--motion-medium) var(--motion-ease-out),
+      box-shadow var(--motion-medium) var(--motion-ease-out),
+      transform var(--motion-medium) var(--motion-ease-out);
+  }
+
+  .experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px rgba(254, 119, 67, 0.26);
   }
   
   /* Currently active role: solid orange background */
@@ -70,6 +78,7 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 0.75rem;
+    animation: fadeUp var(--motion-medium) var(--motion-ease-out) both;
   }
   
   .experience-skill-pill {
@@ -119,5 +128,16 @@
   
   .experience-dropdown-icon--open {
     transform: rotate(180deg);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   

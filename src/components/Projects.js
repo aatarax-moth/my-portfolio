@@ -16,7 +16,7 @@ function Projects() {
     return (
         <Container>
             <div className="projects" id="projects">
-                <div className="margin-top-4 flex-row space-between">
+                <div className="margin-top-4 flex-row space-between" data-reveal style={{ "--reveal-delay": "120ms" }}>
                     <h1>Projects</h1>
                     <Link className="button" to="/projects">
                         All Projects
@@ -29,14 +29,16 @@ function Projects() {
                             project={spotlightProject}
                             onClick={setSelectedProject}
                             spotlight={true}
+                            revealDelayMs={160}
                         />
                     )}
-                    {regularProjects.map((project) => (
+                    {regularProjects.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             project={project}
                             onClick={setSelectedProject}
                             spotlight={false}
+                            revealDelayMs={220 + index * 70}
                         />
                     ))}
                 </div>

@@ -13,18 +13,19 @@ function AllProjects() {
 
     return (
         <Container>
-            <div className="all-projects">
+            <div className="all-projects" data-reveal style={{ "--reveal-delay": "120ms" }}>
                 <button className="back-button margin-bottom-1" onClick={() => navigate(-1)}>
                     Back To Home
                 </button>
 
                 <div className="all-projects-grid">
-                    {projectsData.map((project) => (
+                    {projectsData.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             project={project}
                             onClick={setSelectedProject}
                             spotlight={false}
+                            revealDelayMs={160 + index * 50}
                         />
                     ))}
                 </div>

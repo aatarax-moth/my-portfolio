@@ -5,7 +5,11 @@ import Container from "./Container";
 function Description() {
   return (
     <Container>
-      <div className="margin-top-6 flex-row description gap-4">
+      <div
+        className="margin-top-6 flex-row description gap-4"
+        data-reveal
+        style={{ "--reveal-delay": "80ms" }}
+      >
         <div className="flex-column">
           <p>
             My work sits between user-facing design and core technical
@@ -15,7 +19,7 @@ function Description() {
             sound. Here is an overview of what I do:
           </p>
           <div className="point-container">
-            <div className="point">
+            <div className="point" data-reveal style={{ "--reveal-delay": "140ms" }}>
               <span className="point-number">1</span>
               <div className="point-content">
                 <h3 className="point-heading">Analysis & Wireframing</h3>
@@ -79,7 +83,7 @@ function Description() {
                 </svg>
               </div>
             </div>
-            <div className="point">
+            <div className="point" data-reveal style={{ "--reveal-delay": "200ms" }}>
               <span className="point-number">2</span>
               <div className="point-content">
                 <h3 className="point-heading">End-to-End Asset Development</h3>
@@ -143,7 +147,7 @@ function Description() {
                 </svg>
               </div>
             </div>
-            <div className="point">
+            <div className="point" data-reveal style={{ "--reveal-delay": "260ms" }}>
               <span className="point-number">3</span>
               <div className="point-content">
                 <h3 className="point-heading">Digital Development</h3>

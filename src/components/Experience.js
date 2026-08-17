@@ -20,7 +20,7 @@ import Container from "./Container";
  *   "currentlyActive": true   // presence/truthy value = currently active role
  * }
  */
-function ExperienceCard({ experience }) {
+function ExperienceCard({ experience, revealDelayMs }) {
   const [expanded, setExpanded] = useState(false);
 
   const isActive = Boolean(experience.currentlyActive);
@@ -32,7 +32,13 @@ function ExperienceCard({ experience }) {
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
   return (
-    <div className={cardClassName}>
+    <div
+      className={cardClassName}
+      data-reveal
+      style={
+        revealDelayMs != null ? { "--reveal-delay": `${revealDelayMs}ms` } : null
+      }
+    >
       <div className="experience-row experience-row--top">
         <span className="experience-status">{experience.status}</span>
         <span className="experience-company">{experience.company}</span>
@@ -94,14 +100,15 @@ function ExperienceCard({ experience }) {
 export default function Experience({ data = experienceData }) {
   return (
     <Container>
-    <div className="margin-top-4">
-                    <h1>My Experience</h1>
-                </div>
+      <div className="margin-top-4" data-reveal style={{ "--reveal-delay": "140ms" }}>
+        <h1>My Experience</h1>
+      </div>
       <div className="experience-list">
-        {data.map((experience) => (
+        {data.map((experience, index) => (
           <ExperienceCard
             key={`${experience.company}-${experience.role}`}
             experience={experience}
+            revealDelayMs={180 + index * 70}
           />
         ))}
       </div>

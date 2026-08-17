@@ -6,7 +6,11 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 function Hero() {
   return (
     <Container>
-      <div className="big-brand flex-row gap-4">
+      <div
+        className="big-brand flex-row gap-4"
+        data-reveal
+        style={{ "--reveal-delay": "40ms" }}
+      >
         <div className="vert-center flex-row brand">
           <div className="box"></div>
           <h1 className="big-heading">

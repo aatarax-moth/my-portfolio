@@ -16,3 +16,44 @@
     text-decoration: none;
     color: var(--orange);
 }
+
+.nav-button {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+}
+
+.nav-button::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.25rem;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--motion-medium) var(--motion-ease-out);
+    opacity: 0.9;
+}
+
+.nav-button:hover {
+    background-color: rgba(254, 119, 67, 0.08);
+    transform: translateY(-1px);
+}
+
+.nav-button:hover::after {
+    transform: scaleX(1);
+}
+
+.logo img {
+    display: block;
+    transform-origin: center;
+    transition: transform var(--motion-medium) var(--motion-ease-out),
+        filter var(--motion-medium) var(--motion-ease-out);
+}
+
+.logo:hover img {
+    transform: rotate(-2deg) scale(1.03);
+    filter: drop-shadow(0 8px 18px rgba(254, 119, 67, 0.25));
+}

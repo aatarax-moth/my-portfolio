@@ -23,6 +23,15 @@
     border-radius: 999px;
     border: 1px solid var(--black);
     overflow: hidden;
+    transition: box-shadow var(--motion-medium) var(--motion-ease-out),
+        transform var(--motion-medium) var(--motion-ease-out),
+        background-color var(--motion-medium) var(--motion-ease-out);
+}
+
+.pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(26, 28, 35, 0.08);
+    background-color: rgba(26, 28, 35, 0.02);
 }
 
 .pill-left {
@@ -60,6 +69,19 @@
     color: var(--black);
     background: none;
     text-decoration: none;
+    transition: transform var(--motion-fast) var(--motion-ease-out),
+        background-color var(--motion-medium) var(--motion-ease-out),
+        color var(--motion-medium) var(--motion-ease-out),
+        border-color var(--motion-medium) var(--motion-ease-out),
+        box-shadow var(--motion-medium) var(--motion-ease-out);
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    background-color: var(--black);
+    color: var(--bg-color);
+    border-color: var(--black);
+    box-shadow: 0 12px 26px rgba(26, 28, 35, 0.16);
 }
 
 @media (max-width: 1160px) {
