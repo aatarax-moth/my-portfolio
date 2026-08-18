@@ -39,7 +39,13 @@ function ProjectModal({ project, onClose }) {
                 aria-modal="true"
                 aria-label={`${project.title} project details`}
             >
-                <img src={project.thumbnail} alt={project.title} className="modal-thumbnail" />
+                <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="modal-thumbnail"
+                    loading="lazy"
+                    decoding="async"
+                />
 
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="modal-heading-link">
                     <h2 className="modal-heading">

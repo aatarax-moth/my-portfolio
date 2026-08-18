@@ -210,7 +210,15 @@ function Description() {
             </div>
           </div>
         </div>
-        <div className="profile"></div>
+        <div className="profile" aria-label="Profile image">
+          <img
+            className="profile-img"
+            src="/profile.png"
+            alt="Profile portrait"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </Container>
   );

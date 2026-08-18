@@ -30,6 +30,7 @@ function ProjectCard({ project, onClick, spotlight, revealDelayMs }) {
           alt={project.title}
           className="project-thumbnail"
           loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="project-card-info">

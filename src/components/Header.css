@@ -3,9 +3,9 @@
 }
 
 .navbar {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     gap: 1rem;
     color: var(--orange);
     font-weight: 500;
@@ -17,18 +17,21 @@
     color: var(--orange);
 }
 
-.nav-button {
+.nav-link {
     position: relative;
-    padding: 0.5rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
     border-radius: 999px;
 }
 
-.nav-button::after {
+.nav-link::after {
     content: "";
     position: absolute;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.25rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
     height: 2px;
     background: currentColor;
     transform: scaleX(0);
@@ -37,13 +40,49 @@
     opacity: 0.9;
 }
 
-.nav-button:hover {
+.nav-link:hover {
     background-color: rgba(254, 119, 67, 0.08);
     transform: translateY(-1px);
 }
 
-.nav-button:hover::after {
+.nav-link:hover::after {
     transform: scaleX(1);
+}
+
+.nav-link--ghost {
+    border: 1px solid rgba(254, 119, 67, 0.35);
+    background-color: rgba(254, 119, 67, 0.04);
+}
+
+.nav-link--ghost:hover {
+    border-color: rgba(254, 119, 67, 0.55);
+}
+
+.nav-link--primary {
+    background-color: var(--orange);
+    color: var(--bg-color) !important;
+}
+
+.nav-link--primary::after {
+    background: currentColor;
+    opacity: 0.7;
+}
+
+.nav-link--primary:hover {
+    background-color: var(--orange-hover);
+    box-shadow: 0 10px 26px rgba(254, 119, 67, 0.18);
+}
+
+.nav-link--resume {
+    justify-self: start;
+}
+
+.nav-link--contact {
+    justify-self: end;
+}
+
+.logo {
+    justify-self: center;
 }
 
 .logo img {
@@ -60,12 +99,25 @@
 
 @media (max-width: 767px) {
     .navbar {
-        flex-flow: column;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "logo logo"
+            "resume contact";
+        gap: 0.75rem;
     }
-    .navbar .logo {
-        order: -1;
+
+    .logo {
+        grid-area: logo;
+        justify-self: center;
     }
-    .nav-button {
-        padding-left: 0;
+
+    .nav-link--resume {
+        grid-area: resume;
+        justify-self: start;
+    }
+
+    .nav-link--contact {
+        grid-area: contact;
+        justify-self: end;
     }
 }
