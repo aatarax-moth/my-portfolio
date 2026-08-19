@@ -110,11 +110,11 @@
     {
         "id": 8,
         "spotlight": false,
-        "title": "Mother Of All Rollers",
-        "thumbnail": "/projects/mor.png",
+        "title": "How To Instructions - Sashless Kitset",
+        "thumbnail": "/projects/sashless-kitset.png",
         "shortDescription": "Simple HTML Project",
         "description": "A clean and straightforward HTML project featuring minimal styling and an easy-to-navigate layout. Built for clarity, responsiveness, and quick customisation—ideal for learning, prototyping, or as a foundation for further development.",
-        "link": "https://ciilock.com/catalogues/guides/volta",
+        "link": "https://ciilock.com/catalogues/V5Q5-0625425",
         "software": ["VS Code"],
         "topics": [
             "Simple HTML Design"
@@ -124,7 +124,7 @@
     {
         "id": 9,
         "spotlight": false,
-        "title": "Mother Of All Rollers",
+        "title": "How To Instructions - Volta",
         "thumbnail": "/projects/how-to-volta.png",
         "shortDescription": "Simple HTML Project",
         "description": "A clean and straightforward HTML project featuring minimal styling and an easy-to-navigate layout. Built for clarity, responsiveness, and quick customisation—ideal for learning, prototyping, or as a foundation for further development.",
