@@ -1,4 +1,6 @@
 const REVEAL_SELECTOR = "[data-reveal]";
+const PENDING_CLASS = "reveal--pending";
+const VISIBLE_CLASS = "reveal--visible";
 
 function prefersReducedMotion() {
   return (
@@ -14,7 +16,9 @@ function ensureJsClass() {
 }
 
 function makeVisible(element) {
-  element.classList.add("reveal--visible");
+  if (element.classList.contains(VISIBLE_CLASS)) return;
+  element.classList.remove(PENDING_CLASS);
+  element.classList.add(VISIBLE_CLASS);
 }
 
 function initRevealOnScroll() {
@@ -24,38 +28,47 @@ function initRevealOnScroll() {
 
   ensureJsClass();
 
+  const supportsObserver =
+    !prefersReducedMotion() && typeof IntersectionObserver === "function";
+
+  const observer = supportsObserver
+    ? new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            makeVisible(entry.target);
+            observer.unobserve(entry.target);
+          });
+        },
+        { root: null, threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+      )
+    : null;
+
+  const observeElement = (element) => {
+    if (!(element instanceof HTMLElement)) return;
+    if (!element.matches?.(REVEAL_SELECTOR)) return;
+
+    if (!element.classList.contains(PENDING_CLASS) && !element.classList.contains(VISIBLE_CLASS)) {
+      element.classList.add(PENDING_CLASS);
+    }
+
+    if (!supportsObserver) {
+      makeVisible(element);
+      return;
+    }
+    observer.observe(element);
+  };
+
   const elements = Array.from(document.querySelectorAll(REVEAL_SELECTOR));
-
-  if (prefersReducedMotion() || typeof IntersectionObserver !== "function") {
-    elements.forEach(makeVisible);
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        makeVisible(entry.target);
-        observer.unobserve(entry.target);
-      });
-    },
-    { root: null, threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
-  );
-
-  elements.forEach((element) => observer.observe(element));
+  elements.forEach((element) => observeElement(element));
 
   const mutationObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
         if (!(node instanceof HTMLElement)) return;
 
-        if (node.matches?.(REVEAL_SELECTOR)) {
-          observer.observe(node);
-        }
-
-        node
-          .querySelectorAll?.(REVEAL_SELECTOR)
-          .forEach((el) => observer.observe(el));
+        observeElement(node);
+        node.querySelectorAll?.(REVEAL_SELECTOR).forEach((el) => observeElement(el));
       });
     });
   });

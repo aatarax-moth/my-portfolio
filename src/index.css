@@ -55,8 +55,8 @@ body {
   transform: translateY(0);
 }
 
-/* Scroll reveal */
-.js [data-reveal] {
+/* Scroll reveal (elements opt-in via JS-added reveal--pending) */
+.js [data-reveal].reveal--pending {
   opacity: 0;
   transform: translateY(var(--reveal-y, 12px));
   transition: opacity var(--motion-slow) var(--motion-ease-out),
