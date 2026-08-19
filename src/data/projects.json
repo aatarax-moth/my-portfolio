@@ -90,5 +90,49 @@
             "Interactive Vector Animations"
           ],
         "languages": ["CSS", "JavaScript", "Fabric,js", "Canvas API"]
+    },
+    {
+        "id": 7,
+        "spotlight": false,
+        "title": "Pivotron - Motion Study",
+        "thumbnail": "/projects/pivotron.png",
+        "shortDescription": "Motion Study Animation",
+        "description": "This motion study animation reveals the real physics behind a concealed pivot hinge, visualising smooth movement, force control, and the hidden mechanics that enable seamless door operation.",
+        "link": "https://www.youtube.com/watch?v=ODM9_PB1-MQ",
+        "software": ["Solidworks", "Solidworks Visualize", "Da Vinci Resolve"],
+        "topics": [
+            "Advanced Material Transitions",
+            "Dynamic Lighting Effects",
+            "Real-Time Physics Simulation",
+            "Multi-Layered Scene Rendering"
+          ]
+    },
+    {
+        "id": 8,
+        "spotlight": false,
+        "title": "Mother Of All Rollers",
+        "thumbnail": "/projects/mor.png",
+        "shortDescription": "Simple HTML Project",
+        "description": "A clean and straightforward HTML project featuring minimal styling and an easy-to-navigate layout. Built for clarity, responsiveness, and quick customisation—ideal for learning, prototyping, or as a foundation for further development.",
+        "link": "https://ciilock.com/catalogues/guides/volta",
+        "software": ["VS Code"],
+        "topics": [
+            "Simple HTML Design"
+          ],
+        "languages": ["HTML"]
+    },
+    {
+        "id": 9,
+        "spotlight": false,
+        "title": "Mother Of All Rollers",
+        "thumbnail": "/projects/how-to-volta.png",
+        "shortDescription": "Simple HTML Project",
+        "description": "A clean and straightforward HTML project featuring minimal styling and an easy-to-navigate layout. Built for clarity, responsiveness, and quick customisation—ideal for learning, prototyping, or as a foundation for further development.",
+        "link": "https://ciilock.com/catalogues/guides/volta",
+        "software": ["VS Code"],
+        "topics": [
+            "Simple HTML Design"
+          ],
+        "languages": ["HTML"]
     }
 ]
