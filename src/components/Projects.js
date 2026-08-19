@@ -10,8 +10,17 @@ import "../index.css";
 function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
-    const spotlightProject = projectsData.find((p) => p.spotlight);
-    const regularProjects = projectsData.filter((p) => !p.spotlight);
+    const MAIN_PROJECTS_MAX = 6;
+
+    const mainProjects = projectsData.filter((p) => p.showMain === true);
+    const spotlightProject = mainProjects.find((p) => p.spotlight);
+    const regularProjects = mainProjects.filter((p) => !p.spotlight);
+
+    const remainingSlots = Math.max(
+        0,
+        MAIN_PROJECTS_MAX - (spotlightProject ? 1 : 0)
+    );
+    const visibleRegularProjects = regularProjects.slice(0, remainingSlots);
 
     return (
         <Container>
@@ -32,7 +41,7 @@ function Projects() {
                             revealDelayMs={160}
                         />
                     )}
-                    {regularProjects.map((project, index) => (
+                    {visibleRegularProjects.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             project={project}

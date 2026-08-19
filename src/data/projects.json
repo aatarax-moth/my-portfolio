@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "showMain": true,
         "spotlight": false,
         "title": "CiiLOCK Engineering",
         "thumbnail": "/projects/ciilock.png",
@@ -13,6 +14,7 @@
     },
     {
         "id": 2,
+        "showMain": true,
         "spotlight": false,
         "title": "SiiGMATIC Laboratories",
         "thumbnail": "/projects/siigmatic.png",
@@ -25,6 +27,7 @@
     },
     {
         "id": 3,
+        "showMain": true,
         "spotlight": false,
         "title": "Durabal Design Studio",
         "thumbnail": "/projects/durabal.png",
@@ -42,6 +45,7 @@
     },
     {
         "id": 4,
+        "showMain": true,
         "spotlight": false,
         "title": "VOLTA Doors",
         "thumbnail": "/projects/volta.png",
@@ -59,6 +63,7 @@
     },
     {
         "id": 5,
+        "showMain": true,
         "spotlight": false,
         "title": "TITAN Doorware",
         "thumbnail": "/projects/titan.png",
@@ -76,6 +81,7 @@
     },
     {
         "id": 6,
+        "showMain": true,
         "spotlight": false,
         "title": "Mother Of All Rollers",
         "thumbnail": "/projects/mor.png",
@@ -93,6 +99,7 @@
     },
     {
         "id": 7,
+        "showMain": false,
         "spotlight": false,
         "title": "Pivotron - Motion Study",
         "thumbnail": "/projects/pivotron.png",
@@ -109,6 +116,7 @@
     },
     {
         "id": 8,
+        "showMain": false,
         "spotlight": false,
         "title": "How To Instructions - Sashless Kitset",
         "thumbnail": "/projects/sashless-kitset.png",
@@ -123,6 +131,7 @@
     },
     {
         "id": 9,
+        "showMain": false,
         "spotlight": false,
         "title": "How To Instructions - Volta",
         "thumbnail": "/projects/how-to-volta.png",
