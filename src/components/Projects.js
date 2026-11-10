@@ -1,11 +1,9 @@
 import { useState } from "react";
-import "./Projects.css";
 import Container from "./Container";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import projectsData from "../data/projects.json";
 import { Link } from "react-router-dom";
-import "../index.css";
 
 function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -24,15 +22,15 @@ function Projects() {
 
     return (
         <Container>
-            <div className="projects" id="projects">
-                <div className="margin-top-4 flex-row space-between" data-reveal style={{ "--reveal-delay": "120ms" }}>
-                    <h1>Projects</h1>
-                    <Link className="button" to="/projects">
+            <div id="projects">
+                <div className="mt-16 flex flex-row items-center justify-between gap-4" data-reveal style={{ "--reveal-delay": "120ms" }}>
+                    <h1 className="m-0 text-orange">Projects</h1>
+                    <Link className="inline-block w-fit rounded-full bg-orange px-8 py-4 text-bg no-underline transition duration-220 ease-portfolio hover:-translate-y-px hover:bg-orange-hover hover:shadow-[0_10px_30px_rgba(254,119,67,0.2)]" to="/projects">
                         All Projects
                     </Link>
                 </div>
 
-                <div className="project-showcase">
+                <div className="mt-8 grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[767px]:grid-cols-1">
                     {spotlightProject && (
                         <ProjectCard
                             project={spotlightProject}

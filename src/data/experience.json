@@ -17,14 +17,14 @@
       "Version Control",
       "3D Modelling"
     ],
-    "timeline": "2 yrs 8 mos",
+    "startDate": "2024-01",
     "timeframe": "Jan 2024 - Present",
     "currentlyActive": true
   },
   {
     "status": "Self-Employed",
     "company": "Vikyne Labs",
-    "role": "Full Stack Developer",
+    "role": "Technical Lead",
     "shortSummary": "End-to-end full-stack solutions across diverse sectors, from prototype to deployment.",
     "summary": "Building end-to-end full-stack solutions across diverse sectors, taking projects from initial prototype through to full deployment.",
     "skills": [
@@ -32,7 +32,7 @@
       "Web Development",
       "Prototyping"
     ],
-    "timeline": "4 yrs 1 mo",
+    "startDate": "2022-08",
     "timeframe": "Aug 2022 - Present",
     "currentlyActive": true
   },
@@ -48,7 +48,8 @@
       "Customer Experience",
       "Experience Design"
     ],
-    "timeline": "6 mos",
+    "startDate": "2023-08",
+    "endDate": "2024-01",
     "timeframe": "Aug 2023 - Jan 2024"
   },
   {
@@ -62,7 +63,8 @@
       "Rendering",
       "CAD Modelling"
     ],
-    "timeline": "4 mos",
+    "startDate": "2022-07",
+    "endDate": "2022-10",
     "timeframe": "Jul 2022 - Oct 2022"
   }
 ]

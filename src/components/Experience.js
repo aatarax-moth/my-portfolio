@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import experienceData from "../data/experience.json";
-import "./Experience.css";
-import "../index.css";
 import Container from "./Container";
 
 /**
@@ -15,18 +13,44 @@ import Container from "./Container";
  *   "shortSummary": "One-line summary shown by default.",
  *   "summary": "Longer, extended summary shown when expanded.",
  *   "skills": ["Figma", "React", "Design Systems"],
- *   "timeline": "2 yrs 3 mos",
+ *   "startDate": "2022-01",
+ *   "endDate": "2024-03",
  *   "timeframe": "Jan 2022 - Present",
  *   "currentlyActive": true   // presence/truthy value = currently active role
  * }
  */
+function getExperienceDuration(experience) {
+  const [startYear, startMonth] = experience.startDate.split("-").map(Number);
+  const endDate = experience.currentlyActive
+    ? new Date()
+    : new Date(`${experience.endDate}-01T00:00:00`);
+
+  const totalMonths = Math.max(
+    1,
+    (endDate.getFullYear() - startYear) * 12 +
+      (endDate.getMonth() + 1 - startMonth) +
+      1
+  );
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const parts = [];
+
+  if (years > 0) parts.push(`${years} yr${years === 1 ? "" : "s"}`);
+  if (months > 0) parts.push(`${months} mo${months === 1 ? "" : "s"}`);
+
+  return parts.join(" ") || "1 mo";
+}
+
 function ExperienceCard({ experience, revealDelayMs }) {
   const [expanded, setExpanded] = useState(false);
 
   const isActive = Boolean(experience.currentlyActive);
+  const duration = getExperienceDuration(experience);
 
-  const cardClassName = `experience-card ${
-    isActive ? "experience-card--active" : "experience-card--past"
+  const cardClassName = `rounded-2xl border p-4 transition duration-220 ease-portfolio hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(254,119,67,0.26)] ${
+    isActive
+      ? "border-orange bg-orange"
+      : "border-orange bg-orange/[0.08]"
   }`;
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
@@ -39,44 +63,42 @@ function ExperienceCard({ experience, revealDelayMs }) {
         revealDelayMs != null ? { "--reveal-delay": `${revealDelayMs}ms` } : null
       }
     >
-      <div className="experience-row experience-row--top">
-        <span className="experience-status">{experience.status}</span>
-        <span className="experience-company">{experience.company}</span>
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-[0.85rem] font-medium opacity-80">{experience.status}</span>
+        <span className="text-[0.85rem] font-semibold">{experience.company}</span>
       </div>
 
-      <h3 className="experience-role">{experience.role}</h3>
+      <h3 className="mb-1.5 text-[1.15rem] font-bold">{experience.role}</h3>
 
-      <p className="experience-summary">
+      <p className="mb-3 text-[0.95rem] leading-[1.5]">
         {expanded ? experience.summary : experience.shortSummary}
       </p>
 
       {expanded && Array.isArray(experience.skills) && (
-        <div className="experience-skills">
+        <div className="mb-3 flex flex-wrap gap-1.5 animate-fade-up">
           {experience.skills.map((skill) => (
-            <span className="experience-skill-pill" key={skill}>
+            <span className="rounded-full border border-current px-2.5 py-1 text-xs opacity-85" key={skill}>
               {skill}
             </span>
           ))}
         </div>
       )}
 
-      <div className="experience-row experience-row--bottom">
-        <div className="experience-row experience-row--meta">
-          <span className="experience-timeline">{experience.timeline}</span>
-          <span className="experience-timeframe">{experience.timeframe}</span>
+      <div className="flex items-end justify-between">
+        <div className="flex items-center justify-start gap-4">
+          <span className="text-[0.8rem] opacity-80">{duration}</span>
+          <span className="text-[0.8rem] opacity-80">{experience.timeframe}</span>
         </div>
 
         <button
           type="button"
-          className="experience-dropdown-btn"
+          className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 text-inherit hover:bg-black/8"
           onClick={toggleExpanded}
           aria-expanded={expanded}
           aria-label={expanded ? "Collapse role details" : "Expand role details"}
         >
           <svg
-            className={`experience-dropdown-icon ${
-              expanded ? "experience-dropdown-icon--open" : ""
-            }`}
+            className={`transition duration-220 ease-portfolio ${expanded ? "rotate-180" : ""}`}
             width="14"
             height="14"
             viewBox="0 0 14 14"
@@ -100,10 +122,10 @@ function ExperienceCard({ experience, revealDelayMs }) {
 export default function Experience({ data = experienceData }) {
   return (
     <Container>
-      <div className="margin-top-4" data-reveal style={{ "--reveal-delay": "140ms" }}>
-        <h1>My Experience</h1>
+      <div className="mt-16" data-reveal style={{ "--reveal-delay": "140ms" }}>
+        <h1 className="m-0 text-orange">My Experience</h1>
       </div>
-      <div className="experience-list">
+      <div className="mt-8 flex flex-col gap-4">
         {data.map((experience, index) => (
           <ExperienceCard
             key={`${experience.company}-${experience.role}`}

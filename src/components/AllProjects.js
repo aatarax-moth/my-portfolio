@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import "./AllProjects.css";
-import "../index.css";
 import Container from "./Container";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
@@ -13,12 +11,12 @@ function AllProjects() {
 
     return (
         <Container>
-            <div className="all-projects" data-reveal style={{ "--reveal-delay": "120ms" }}>
-                <button className="back-button margin-bottom-1" onClick={() => navigate(-1)}>
+            <div className="py-16" data-reveal style={{ "--reveal-delay": "120ms" }}>
+                <button className="mb-4 inline-block cursor-pointer rounded-full border-0 bg-orange px-8 py-4 text-bg transition duration-220 ease-portfolio hover:-translate-y-px hover:bg-orange-hover hover:shadow-[0_10px_26px_rgba(254,119,67,0.18)]" onClick={() => navigate(-1)}>
                     Back To Home
                 </button>
 
-                <div className="all-projects-grid">
+                <div className="grid grid-cols-3 gap-6 max-[900px]:grid-cols-2 max-[767px]:grid-cols-1">
                     {projectsData.map((project, index) => (
                         <ProjectCard
                             key={project.id}
